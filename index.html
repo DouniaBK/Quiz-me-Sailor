@@ -1,0 +1,44 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Quizz My English!</title>
+</head>
+<body>
+    <header>
+        <div class="background-image">
+            <img src="assets/css/images/background-image.jpg" alt="background-image-coloring_pencils"> 
+        </div>
+    </header>
+    <div class="container">
+        <div class="short-intro">
+            <h1>Quizz My English</h1>
+            <form class="player-form" action="Quizz-My-English/quiz.html" method="get"></form>>
+                <label class="contact_line" for="fname">Name</label>
+
+                <input class="contact_line" type="text" id="fname" name="firstname" placeholder="Enter your name">
+
+                <label for="topic">Topic</label>
+                    <select name="topic" id="topic">
+                        <option value="jobs">Jobs</option>
+                        <option value="animals">Animals</option>
+                        <option value="food">Food</option>
+                    </select>
+
+                <a href="quiz.html" target="_self" rel="noopener" aria-label=" start the quiz">
+                <button class="btn" id="start_quiz" type="submit" onClick="saveName(event)">Start</button>
+                </a> 
+            </form>        
+        </div>
+    </div>
+      
+
+
+<script src="/assets/css/js/script.js"></script>
+</body>
+</html>
+
