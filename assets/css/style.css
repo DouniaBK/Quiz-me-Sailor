@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Lato&family=Montserrat&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bitter', serif;
+}
+
+#background-image {
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+    position: fixed;
+}
+
+.container {
+    margin: auto;
+    width: 70%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    top: 20%;
+    background-color: #bce0e18c;
+    height: 47vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    position: relative;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.content {
+    color: #42526e;
+    padding: 7px 20px;
+    cursor: pointer;
+    margin-left: auto;
+    font-weight: 500;
+    font-size: large;
+    display: grid;
+    justify-items: start;
+}
+
+.contact_line {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    padding: 0.3rem;
+}
+
+.contact_input {
+    color: #42526e;
+    padding: 7px 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: large;
+    border: #efeae6;
+    border-radius: 0.5rem;
+    margin: 0.3rem;
+}
+
+#quiz-header {
+    font-size: 70px;
+    font-weight: 600;
+}
+
+#start-quiz {
+    padding: 20px;
+    margin: 6px;
+    color: grey;
+    cursor: pointer;
+    background: aquamarine;
+    color: #42526e;
+    padding: 19px 230px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: large;
+    border: #efeae6;
+    border-radius: 0.5rem;
+}
