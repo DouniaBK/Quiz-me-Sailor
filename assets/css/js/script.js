@@ -63,3 +63,68 @@ let questions = [
     }
 ]
 
+restartBtn.addEventListener('click', restart);
+previousBtn.addEventListener('click', previous);
+nextBtn.addEventListener('click', next);
+submitBtn.addEventListener('click', submit);
+
+
+/** 
+ * The page loads and the script gets executed
+ *  with a feature that will allow the page to jump to
+ * the next question once an option is selected from the list of answer options.
+*/
+
+function beginQuiz () {
+    currentQuestion = 0;
+    questionText.innerHTML = questions[currentQuestion].question;
+    trueBtn.innerHTML = questions[currentQuestion].answers{0}.option;
+    trueBtn.onclick = () => {
+        let ano=0;
+        if(questions[currentQuestion].answers[ano].answer){
+            if(score<6){
+                score++;
+            }
+        }
+        userScore.innerHTML = score;
+        if(currentQuestion<2){
+            next();
+        }
+    }
+    falseBtn.innerHTML = questions[currentQuestion].answers[1].option;
+    falseBtn.onclick = () => {
+        let ano=1;
+        if(questions[currentQuestion].answers[ano].answer){
+            if(score<6){
+                score++;
+            }
+        }
+        userScore.innerHTML = score;
+        if(currentQuestion<2) {
+            next();
+        }
+    }
+    previousBtn.classList.add('hide');
+}
+
+beginQuiz();
+
+/**
+ * reset the score
+ * remove the hide class from elements
+ * class beginQuiz()
+ */
+
+function restart() {
+    currentQuestion = 0;
+    previousBtn.classList.remove('hide');
+    nextBtn.classList.remove('hide');
+    submitBtn.classList.remove('hide');
+    trueBtn.classList.remove('hide');
+    falseBtn.classList.remove('hide');
+    score= 0;
+    userScore.innerHTML = score;
+    beginQuiz();
+}
+
+
