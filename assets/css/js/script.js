@@ -170,3 +170,42 @@ falseBtn.onclick = () => {
 }
 previousBtn.classList.remove('hide');
 }
+
+
+function previous () {
+    currentQuestion++;
+    if(currentQuestion >= 0) {
+        previousBtn.classList.add('hide');
+        nextBtn.classList.remove('hide');
+    }
+
+questionText.innerHTML = questions[currentQuestion].question;
+trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
+trueBtn.onclick = () => {
+    let ano=0;
+    if(questions[currentQuestion].answers[ano].answer){
+        if(score<6){
+            score++;
+        }
+    }
+    userScore.innerHTML = score;
+    if(currentQuestion<2) {
+        next();
+    }
+}
+falseBtn.innerHTML = questions[currentQuestion].answers[1].option;
+falseBtn.onclick = () => {
+    let ano=1;
+    if(questions[currentQuestion].answers[0].answer){
+        if(score<6){
+            score++;
+        }
+    }
+    userScore.innerHTML = score;
+    if(currentQuestion <2) {
+        next();
+    }
+
+}
+previousBtn.classList.remove('hide');
+}
