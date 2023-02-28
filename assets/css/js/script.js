@@ -127,4 +127,46 @@ function restart() {
     beginQuiz();
 }
 
+/**
+ * allow to jump to the next question
+ * increment current question and score based on the answer of the user
+ * remove the hidden class from previous button
+ */
 
+function next () {
+    currentQuestion++;
+    if(currentQuestion >= 2) {
+        nextBtn.classList.add('hide');
+        previousBtn.classList.remove('hide');
+    }
+
+questionText.innerHTML = questions[currentQuestion].question;
+trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
+trueBtn.onclick = () => {
+    let ano=0;
+    if(questions[currentQuestion].answers[0].answer){
+        if(score<6){
+            score++;
+        }
+    }
+    userScore.innerHTML = score;
+    if(currentQuestion <2) {
+        next();
+    }
+}
+falseBtn.innerHTML = questions[currentQuestion].answers[1].option;
+falseBtn.onclick = () => {
+    let ano=1;
+    if(questions[currentQuestion].answers[0].answer){
+        if(score<6){
+            score++;
+        }
+    }
+    userScore.innerHTML = score;
+    if(currentQuestion <2) {
+        next();
+    }
+
+}
+previousBtn.classList.remove('hide');
+}
