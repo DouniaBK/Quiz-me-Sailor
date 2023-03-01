@@ -152,35 +152,7 @@ function beginQuiz () {
     }
       
 
-
-
-    /*
-    trueBtn.onclick = () => {
-        let ano=0;
-        if(questions[currentQuestion].answers[ano].answer){
-            if(score<6){
-                score++;
-            }
-        }
-        userScore.innerHTML = score;
-        if(currentQuestion<10){
-            next();
-        }
-    }
-    falseBtn.innerHTML = questions[currentQuestion].answers[1].option;
-    falseBtn.onclick = () => {
-        let ano=1;
-        if(questions[currentQuestion].answers[ano].answer){
-            if(score<10){
-                score++;
-            }
-        }
-        userScore.innerHTML = score;
-        if(currentQuestion<10) {
-            next();
-        }
-    }
-    previousBtn.classList.add('hide');*/
+    previousBtn.classList.add('hide');
 }
 
 beginQuiz();
@@ -196,8 +168,6 @@ function restart() {
     previousBtn.classList.remove('hide');
     nextBtn.classList.remove('hide');
     submitBtn.classList.remove('hide');
-    trueBtn.classList.remove('hide');
-    falseBtn.classList.remove('hide');
     score= 0;
     userScore.innerHTML = score;
     beginQuiz();
@@ -211,40 +181,14 @@ function restart() {
 
 function next () {
     currentQuestion++;
-    if(currentQuestion >= 6) {
+    if(currentQuestion >= 11) {
         nextBtn.classList.add('hide');
         previousBtn.classList.remove('hide');
     }
 
-questionText.innerHTML = questions[currentQuestion].question;
-trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
-trueBtn.onclick = () => {
-    let ano=0;
-    if(questions[currentQuestion].answers[0].answer){
-        if(score<10){
-            score++;
-        }
-    }
-    userScore.innerHTML = score;
-    if(currentQuestion <10) {
-        next();
-    }
-}
-falseBtn.innerHTML = questions[currentQuestion].answers[1].option;
-falseBtn.onclick = () => {
-    let ano=1;
-    if(questions[currentQuestion].answers[0].answer){
-        if(score<6){
-            score++;
-        }
-    }
-    userScore.innerHTML = score;
-    if(currentQuestion <10) {
-        next();
-    }
+    questionText.innerHTML = questions[currentQuestion].question;
 
-}
-previousBtn.classList.remove('hide');
+    previousBtn.classList.remove('hide');
 }
 
 
@@ -255,47 +199,21 @@ function previous () {
         nextBtn.classList.remove('hide');
     }
 
-questionText.innerHTML = questions[currentQuestion].question;
-trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
-trueBtn.onclick = () => {
-    let ano=0;
-    if(questions[currentQuestion].answers[ano].answer){
-        if(score<10){
-            score++;
-        }
-    }
-    userScore.innerHTML = score;
-    if(currentQuestion<10) {
-        next();
-    }
-}
-falseBtn.innerHTML = questions[currentQuestion].answers[1].option;
-falseBtn.onclick = () => {
-    let ano=1;
-    if(questions[currentQuestion].answers[0].answer){
-        if(score<10){
-            score++;
-        }
-    }
-    userScore.innerHTML = score;
-    if(currentQuestion <10) {
-        next();
-    }
+    questionText.innerHTML = questions[currentQuestion].question;
 
-}
-previousBtn.classList.remove('hide');
+    previousBtn.classList.remove('hide');
 }
 
 function submit () {
-
-}
-
-function submit() {
+    if(currentQuestion >= 12) {
+        previousBtn.classList.add('hide');
+        nextBtn.classList.remove('hide');
+    
+    }
     previousBtn.classList.add('hide');
     nextBtn.classList.add('hide');
     submitBtn.classList.add('hide');
-    trueBtn.classList.add('hide');
-    falseBtn.classList.add('hide');
-    questionText.innerHTML = "Keep on practising to get your boat licence, Sailor!"
+    questionText.innerHTML = "Keep on going, Sailor!"
 }
+
 

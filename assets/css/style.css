@@ -105,26 +105,18 @@
     text-align: justify;
 }
 
-.start-btn {
+#start-btn {
     width: 20rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     margin: 10px;
-    color: grey;
     cursor: pointer;
     background: #bce0e1;
-    color: #42526e;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: large;
-    border: #efeae6;
     border-radius: 0.5rem;
-
+  
 }
 #start-quiz-btn {
-    margin: 6px;
-    color: grey;
     cursor: pointer;
     background: #bce0e1;
     color: #42526e;
@@ -132,8 +124,8 @@
     font-weight: 500;
     font-size: large;
     border: #efeae6;
-    border-radius: 0.5rem;
     width: 100%;
+    font-weight: 600;
 }
 
 .wrapper{
@@ -157,7 +149,7 @@
 
 .btn:hover{
     background: yellowgreen;
-    padding: 22px;
+   
 }
 
 .answer-options {
