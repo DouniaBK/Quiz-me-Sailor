@@ -2,18 +2,17 @@ const restartBtn = document.getElementById('restart');
 const previousBtn = document.getElementById('previous');
 const nextBtn = document.getElementById('next');
 const submitBtn = document.getElementById('submit');
-const trueBtn = document.getElementById('true');
-const falseBtn = document.getElementById('false');
+const optionBtn = document.getElementsByClassName('btn-option');
 const userScore = document.getElementById('user-score');
 const questionText = document.getElementById('question-text');
-const img = document.querySelector("img")
+
 
 let currentQuestion = 0;
 var score = 0;
 
 let questions = [
     {
-        question: "The responsibility of the master(driver) of a vessel is to:",
+        question: "1. The responsibility of the master (driver) of a vessel is to:",
         answers: [
             {option:"Maintain a proper lookout and avoid collision", answer: false},
             {option:"Ensure that all safety equipement is accessible and stored correctly", answer: false},
@@ -24,7 +23,7 @@ let questions = [
     },
    
     {
-        question: "Where should you drive a vessel when in a channel?",
+        question: "2. Where should you drive a vessel when in a channel?",
         answers: [
             {option:"On the port(left-hand) side", answer: false},
             {option:"In the middle of the channel", answer: false},
@@ -34,7 +33,7 @@ let questions = [
       
     },
     {
-        question: "What is the MAXIMUM permissible blood alcohol level for a person 18 years of age or more when driving a vessel in NSW?",
+        question: "3. What is the MAXIMUM permissible blood alcohol level for a person 18 years of age or more when driving a vessel in NSW?",
         answers: [
             {option:"Under 0.08", answer: false},
             {option:"Under 0.02", answer: false},
@@ -44,7 +43,7 @@ let questions = [
  
     },
     {
-        question: "What best describes a skipper's (driver's) responsibility regarding speed on the water?",
+        question: "4. What best describes a skipper's (driver's) responsibility regarding speed on the water?",
         answers: [
             {option:"Travelling at a speed the hull is designed to reach", answer: false},
             {option:"Travelling at a speed at which sudden danger can be avoided", answer:true },
@@ -53,7 +52,7 @@ let questions = [
         ],
     },  
     {
-        question: "When driving a vessel at 6 knots or more, or towing a person, what is the MINIMUM distance both the vessel and any towed person MUST keep from power-driven vessels, land or structures?",
+        question: "5. When driving a vessel at 6 knots or more, or towing a person, what is the MINIMUM distance both the vessel and any towed person MUST keep from power-driven vessels, land or structures?",
         answers: [
             {option:"30 metres or, if not possible, a safe distance", answer: true},
             {option:"60 metres or, if not possible, a safe distance", answer: false},
@@ -62,7 +61,7 @@ let questions = [
         ],
     },
     {
-        question: "What type of lifejacket MUST be worn when boating alone in a power vessel under 4.8 metres on enclosed waters?",
+        question: "6. What type of lifejacket MUST be worn when boating alone in a power vessel under 4.8 metres on enclosed waters?",
         answers: [
             {option:"No lifejacket is required when boating alone in this situation", answer: false},
             {option:"Only a Level 100+ (formerly Type 1) lifejacket is suitable in this situation", answer: false},
@@ -72,7 +71,7 @@ let questions = [
         
     },
     {
-        question: "When travelling DOWNSTREAM (toward the sea) on which side should you keep this type of navigation mark to stay in the channel?",
+        question: "7. When travelling DOWNSTREAM (toward the sea) on which side should you keep this type of navigation mark to stay in the channel?",
         answers: [
             {option:"Your port (left-hand) side", answer: true},
             {option:"Your starboard (right-hand) side", answer: false},
@@ -82,7 +81,7 @@ let questions = [
         
     },
     {
-        question: "In what circumstances MUST a child under 12 years of age wear a lifejacket?",
+        question: "8. In what circumstances MUST a child under 12 years of age wear a lifejacket?",
         answers: [
             {option:"At all times on a vessel under 4.8 metres", answer: false},
             {option:"When being towed on any apparatus", answer: false},
@@ -92,7 +91,7 @@ let questions = [
         
     },
     {
-        question: "In what circumstances MUST a person on a vessel under 4.8 metres wear a lifejacket?",
+        question: "9. In what circumstances MUST a person on a vessel under 4.8 metres wear a lifejacket?",
         answers: [
             {option:"After sunset and before sunrise", answer: false},
             {option:"On open and alpine waters", answer: false},
@@ -102,7 +101,7 @@ let questions = [
         
     },
     {
-        question: "When traveling DOWNSTREAM (toward the sea), on which side of your vessel should you keep this red marker?",
+        question: "10. When traveling DOWNSTREAM (toward the sea), on which side of your vessel should you keep this red marker?",
         answers: [
             {option:"On the port (left-hand) side", answer: false},
             {option:"On the starboard (right-hand) side", answer: true},
@@ -126,9 +125,36 @@ submitBtn.addEventListener('click', submit);
 */
 
 function beginQuiz () {
+    // Set question counter to zero to start at the first question
     currentQuestion = 0;
+    // set the index 0 question as the first question in the Html text amongs all questions
     questionText.innerHTML = questions[currentQuestion].question;
-    trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
+    // set all buttons' text and call back functions
+    //
+    for (let i = 0; i < optionBtn.length; i++) {
+        const btn = optionBtn[i]
+        btn.lastElementChild.innerHTML = questions[currentQuestion].answers[i].option;
+
+        btn.onclick = () => {
+            console.log("i am a button ", btn.children[0].innerHTML);
+            const is_correct_answer = questions[currentQuestion].answers[i].answer;
+             if (is_correct_answer ) {
+                 score++
+             }
+           
+            userScore.innerHTML = score;
+            console.log('you scored a point', score)
+            console.log('answer is correct', is_correct_answer)
+        }
+
+
+        console.log(optionBtn[i],"i am a button");
+    }
+      
+
+
+
+    /*
     trueBtn.onclick = () => {
         let ano=0;
         if(questions[currentQuestion].answers[ano].answer){
@@ -154,7 +180,7 @@ function beginQuiz () {
             next();
         }
     }
-    previousBtn.classList.add('hide');
+    previousBtn.classList.add('hide');*/
 }
 
 beginQuiz();
@@ -273,4 +299,3 @@ function submit() {
     questionText.innerHTML = "Keep on practising to get your boat licence, Sailor!"
 }
 
-console.log('gdjkashjkdhsa')
