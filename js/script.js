@@ -7,11 +7,10 @@ const userScore = document.getElementById('user-score');
 const questionText = document.getElementById('question-text');
 const messageElement = document.getElementById('message')
 
-
 let currentQuestion = 0;
 var score = 0;
 
-
+// Define the questions
 let questions = [
     {
         question: "1. The responsibility of the master (driver) of a vessel is to:",
@@ -114,6 +113,15 @@ let questions = [
     }
 ]
 
+
+// Initialize empty answers array
+let answers = []
+for (let i = 0; i < questions.length; i++) {
+    // Push a new entry to the answers array for each question
+    answers.push({answered: false, correct: null, answer: null})
+}
+
+// Add event listeners
 restartBtn.addEventListener('click', restart);
 previousBtn.addEventListener('click', previous);
 nextBtn.addEventListener('click', next);
@@ -137,53 +145,101 @@ beginQuiz();
 
 function displayQandA() {
 
+    // Reset user message
+    messageElement.innerHTML = "";
+
+    // Set question text
     questionText.innerHTML = questions[currentQuestion].question;
+
     // set all buttons' text and call back functions
-    //
     for (let i = 0; i < optionBtn.length; i++) {
         const btn = optionBtn[i]
         btn.style.backgroundColor = '#bce0e1'
         btn.lastElementChild.innerHTML = questions[currentQuestion].answers[i].option;
 
-        // The user is allowed to click on one anwser per question the rest of the answers will then be disabled.
-        btn.onclick = () => {
-            disableBtns()
-            console.log("i am a button ", btn.children[0].innerHTML);
-            const is_correct_answer = questions[currentQuestion].answers[i].answer;
-             if (is_correct_answer ) { // If the answer is correct
-                // Increment the score
-                 score++
-                 
-                 messageElement.innerHTML = "That is correct, sailor!"
-             } else { // If the answer is incorrect display comesiration message
-                messageElement.innerHTML = "That is incorrect, mate!"
-             }
-             resolveQuestion() 
-            userScore.innerHTML = score;
-        } 
+        if (answers[currentQuestion].answered === false ) {
+            // The user is allowed to click on one anwser per question the rest of the answers will then be disabled.
+            btn.onclick = () => {
+                disableBtns()
+                const is_correct_answer = questions[currentQuestion].answers[i].answer;
 
-        console.log(optionBtn[i],"i am a button");
+                // Log answer to answers object
+                answers[currentQuestion].answered = true;
+                answers[currentQuestion].correct = is_correct_answer;
+                answers[currentQuestion].answer = i;
+
+                if (is_correct_answer ) { // If the answer is correct
+                    // Increment the score
+                    score++
+                }
+                resolveQuestion()
+                userScore.innerHTML = score;
+            }
+        }
+    }
+    
+    // If the questions is already answered, show the solution to the user
+    // else, enable the buttons, to he can submit his answer
+    if (answers[currentQuestion].answered === true ) {
+        resolveQuestion()
+    } else {
+        enableBtns()
     }
 
-    previousBtn.classList.add('hide');
+    // Hide and show previous button depending on question number
+    if (currentQuestion > 0) {
+        previousBtn.classList.remove('hide');
+    } else {
+        previousBtn.classList.add('hide');
+    }
+
 }
 
 
 function resolveQuestion() {
 
-    for (let i = 0; i < optionBtn.length; i++) {
-        const btn = optionBtn[i]
-        const isCorrect = questions[currentQuestion].answers[i].answer;
+    console.log("answers[currentQuestion]", answers[currentQuestion])
+
+    // Show the actually correct answer for each button/option
+    let correct_answer = 0;
+    for (let btnNr = 0; btnNr < optionBtn.length; btnNr++) {
+        const btn = optionBtn[btnNr]
+        const isCorrect = questions[currentQuestion].answers[btnNr].answer;
         if (isCorrect) {
             btn.style.backgroundColor = '#4ac54a'
+            correct_answer = btnNr;
         } else {
             btn.style.backgroundColor = '#eba1a1'
         }
-
-        console.log(optionBtn[i],"i am a button");
     }
-
+    
+    // Show if the user actually answered correctly
+    const is_correct_answer = answers[currentQuestion].correct;
+    if (is_correct_answer ) { // If the answer is correct
+        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)}. That is correct, sailor!`
+    } else { // If the answer is incorrect display comesiration message
+        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)}. That is incorrect, mate! The correct answer is ${answeredNumberToLetter(correct_answer)}.`
+    }
 }
+
+
+function answeredNumberToLetter(number) {
+    // Return the letter for the given answer number
+    switch(number) {
+        case 0:
+            return 'A';
+        case 1:
+            return 'B';
+        case 2:
+            return 'C';
+        case 3:
+            return 'D';
+        default:
+            return '';
+      }
+}
+
+
 
 /**
  * reset the score
@@ -208,42 +264,39 @@ function restart() {
  */
 
 function next () {
-    
-    enableBtns()
-    currentQuestion++;
-    if(currentQuestion >= 11) {
-        nextBtn.classList.add('hide');
-        previousBtn.classList.remove('hide');
+    if (currentQuestion < 10) {
+        currentQuestion++;
+        displayQandA()
     }
-
-    displayQandA()
-
 }
 
 
 function previous () {
-    currentQuestion++;
-    if(currentQuestion >= 0) {
-        previousBtn.classList.add('hide');
-        nextBtn.classList.remove('hide');
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        displayQandA();
     }
-
-    questionText.innerHTML = questions[currentQuestion].question;
-
-    previousBtn.classList.remove('hide');
 }
 
 function submit () {
-    if(currentQuestion >= 12) {
+
+    for (let i = 0; i < optionBtn.length; i++){
+
+        if(currentQuestion =>9) {
         previousBtn.classList.add('hide');
-        nextBtn.classList.remove('hide');
-    
+        optionBtn.classList.add('hide');
+        nextBtn.classList.add('hide');
+        questionText.classList.add('hide');
+        questionText.innerHTML = "Keep practicing, Sailor!"
+    }
     }
     previousBtn.classList.add('hide');
     nextBtn.classList.add('hide');
     submitBtn.classList.add('hide');
-    questionText.innerHTML = "Keep on going, Sailor!"
+    
 }
+
+//Once the user has clicked on an answer the rest of the options are disabled to avoid changing the score/cheating
 
 function disableBtns () {
 
@@ -253,13 +306,12 @@ function disableBtns () {
         
     }
 }
-
+// Enables the use of the buttons
 function enableBtns () {
 
     for (let i = 0; i < optionBtn.length; i++) {
         console.log('enableBtns optionBtn[i]', optionBtn[i])
         optionBtn[i].disabled = false
-        //optionBtn[i].prop('disabled', false);
         
     }
 }
