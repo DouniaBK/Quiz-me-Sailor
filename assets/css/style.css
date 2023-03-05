@@ -152,6 +152,11 @@
    
 }
 
+
+
+
+
+
 .answer-options {
     padding: 20px;
     display: flex;
@@ -174,8 +179,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-
 }
+
+.btn-option:disabled {
+    cursor: default;
+}
+
 .choice-text {
     display: flex;
     flex-direction: row;

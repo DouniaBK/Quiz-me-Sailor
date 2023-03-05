@@ -5,10 +5,12 @@ const submitBtn = document.getElementById('submit');
 const optionBtn = document.getElementsByClassName('btn-option');
 const userScore = document.getElementById('user-score');
 const questionText = document.getElementById('question-text');
+const messageElement = document.getElementById('message')
 
 
 let currentQuestion = 0;
 var score = 0;
+
 
 let questions = [
     {
@@ -128,34 +130,60 @@ function beginQuiz () {
     // Set question counter to zero to start at the first question
     currentQuestion = 0;
     // set the index 0 question as the first question in the Html text amongs all questions
+    displayQandA()
+}
+
+beginQuiz();
+
+function displayQandA() {
+
     questionText.innerHTML = questions[currentQuestion].question;
     // set all buttons' text and call back functions
     //
     for (let i = 0; i < optionBtn.length; i++) {
         const btn = optionBtn[i]
+        btn.style.backgroundColor = '#bce0e1'
         btn.lastElementChild.innerHTML = questions[currentQuestion].answers[i].option;
 
+        // The user is allowed to click on one anwser per question the rest of the answers will then be disabled.
         btn.onclick = () => {
+            disableBtns()
             console.log("i am a button ", btn.children[0].innerHTML);
             const is_correct_answer = questions[currentQuestion].answers[i].answer;
-             if (is_correct_answer ) {
+             if (is_correct_answer ) { // If the answer is correct
+                // Increment the score
                  score++
+                 
+                 messageElement.innerHTML = "That is correct, sailor!"
+             } else { // If the answer is incorrect display comesiration message
+                messageElement.innerHTML = "That is incorrect, mate!"
              }
-           
+             resolveQuestion() 
             userScore.innerHTML = score;
-            console.log('you scored a point', score)
-            console.log('answer is correct', is_correct_answer)
-        }
-
+        } 
 
         console.log(optionBtn[i],"i am a button");
     }
-      
 
     previousBtn.classList.add('hide');
 }
 
-beginQuiz();
+
+function resolveQuestion() {
+
+    for (let i = 0; i < optionBtn.length; i++) {
+        const btn = optionBtn[i]
+        const isCorrect = questions[currentQuestion].answers[i].answer;
+        if (isCorrect) {
+            btn.style.backgroundColor = '#4ac54a'
+        } else {
+            btn.style.backgroundColor = '#eba1a1'
+        }
+
+        console.log(optionBtn[i],"i am a button");
+    }
+
+}
 
 /**
  * reset the score
@@ -180,15 +208,16 @@ function restart() {
  */
 
 function next () {
+    
+    enableBtns()
     currentQuestion++;
     if(currentQuestion >= 11) {
         nextBtn.classList.add('hide');
         previousBtn.classList.remove('hide');
     }
 
-    questionText.innerHTML = questions[currentQuestion].question;
+    displayQandA()
 
-    previousBtn.classList.remove('hide');
 }
 
 
@@ -216,4 +245,22 @@ function submit () {
     questionText.innerHTML = "Keep on going, Sailor!"
 }
 
+function disableBtns () {
+
+    for (let i = 0; i < optionBtn.length; i++) {
+        console.log('disableBtns optionBtn[i]', optionBtn[i])
+        optionBtn[i].disabled = true
+        
+    }
+}
+
+function enableBtns () {
+
+    for (let i = 0; i < optionBtn.length; i++) {
+        console.log('enableBtns optionBtn[i]', optionBtn[i])
+        optionBtn[i].disabled = false
+        //optionBtn[i].prop('disabled', false);
+        
+    }
+}
 
