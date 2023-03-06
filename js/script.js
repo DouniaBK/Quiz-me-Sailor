@@ -264,7 +264,7 @@ function restart() {
  */
 
 function next () {
-    if (currentQuestion < 10) {
+    if (currentQuestion<9) {
         currentQuestion++;
         displayQandA()
     }
@@ -278,20 +278,21 @@ function previous () {
     }
 }
 
+// Once the user clicks submit all the buttons and the questions disapear and a congradulatory message appears.
 function submit () {
+    
+   for (let i = 0; i < optionBtn.length; i++){
 
-    for (let i = 0; i < optionBtn.length; i++){
-
-        if(currentQuestion =>9) {
+      if(currentQuestion =>8) {
         previousBtn.classList.add('hide');
-        optionBtn.classList.add('hide');
+        optionBtn[i].classList.add('hide');
         nextBtn.classList.add('hide');
-        questionText.classList.add('hide');
-        questionText.innerHTML = "Keep practicing, Sailor!"
+        questionText.classList.remove('hide');
+        questionText.innerHTML = "Keep practicing, Sailor! The sea calls."
     }
-    }
+ }
+
     previousBtn.classList.add('hide');
-    nextBtn.classList.add('hide');
     submitBtn.classList.add('hide');
     
 }
