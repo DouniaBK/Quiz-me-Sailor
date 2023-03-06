@@ -115,7 +115,9 @@ let questions = [
 ]
 
 
-// Initialize empty answers array
+/**  
+ * Initialize empty answers array
+ */
 let answers = []
 for (let i = 0; i < questions.length; i++) {
     // Push a new entry to the answers array for each question
@@ -137,15 +139,20 @@ function beginQuiz () {
     displayQandA()
 }
 
-// Add event listeners
+// Add event listeners with error handling
 if (previousBtn !== null ){
-   // restartBtn.addEventListener('click', restart);
     previousBtn.addEventListener('click', previous);
     nextBtn.addEventListener('click', next);
     submitBtn.addEventListener('click', submit);
 
     beginQuiz();
 }
+/**
+ * displays the questions and answers
+ * logs and saves the answers
+ * increment score
+ * display the answer of the user
+ */
 
 function displayQandA() {
 
@@ -167,7 +174,7 @@ function displayQandA() {
                 disableBtns()
                 const is_correct_answer = questions[currentQuestion].answers[i].answer;
 
-                // Log answer to answers object
+                // Log answer to answers object so it is saved in the object
                 answers[currentQuestion].answered = true;
                 answers[currentQuestion].correct = is_correct_answer;
                 answers[currentQuestion].answer = i;
@@ -183,7 +190,7 @@ function displayQandA() {
     }
     
     // If the questions is already answered, show the solution to the user
-    // else, enable the buttons, to he can submit his answer
+    // else, enable the buttons, so he can submit his answer
     if (answers[currentQuestion].answered === true ) {
         resolveQuestion()
     } else {
@@ -198,7 +205,12 @@ function displayQandA() {
     }
 
 }
-
+/**
+ * shows the correct answer in green and incorrect in red
+ * Tells the user if he answered the question correctly or not
+ * by displaying the answer option letter (a, b, c or d) that the 
+ * user selected
+ */
 
 function resolveQuestion() {
 
@@ -221,14 +233,16 @@ function resolveQuestion() {
     const is_correct_answer = answers[currentQuestion].correct;
     if (is_correct_answer ) { // If the answer is correct
         messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)}. That is correct, sailor!`
-    } else { // If the answer is incorrect display comesiration message
+    } else { // If the answer is incorrect display message
         messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)}. That is incorrect, mate! The correct answer is ${answeredNumberToLetter(correct_answer)}.`
     }
 }
 
-
+/**
+ *  Return the letter for the given answer number 
+ */
 function answeredNumberToLetter(number) {
-    // Return the letter for the given answer number
+    
     switch(number) {
         case 0:
             return 'A';
@@ -283,7 +297,10 @@ function previous () {
     }
 }
 
-// Once the user clicks submit all the buttons and the questions disapear and a congradulatory message appears.
+/**
+ * Once the user clicks submit all the buttons 
+ * and the questions disapear and a congradulatory message appears.
+ * */ 
 function submit () {
     
    for (let i = 0; i < optionBtn.length; i++){
@@ -303,7 +320,9 @@ function submit () {
     
 }
 
-//Once the user has clicked on an answer the rest of the options are disabled to avoid changing the score/cheating
+/** Once the user has clicked on an answer the rest of
+ * the options are disabled to avoid changing the score/cheating
+ */
 
 function disableBtns () {
 
@@ -313,7 +332,7 @@ function disableBtns () {
         
     }
 }
-// Enables the use of the buttons
+/** Enables the use of the buttons */
 function enableBtns () {
 
     for (let i = 0; i < optionBtn.length; i++) {
