@@ -10,6 +10,7 @@ const messageElement = document.getElementById('message')
 let currentQuestion = 0;
 var score = 0;
 
+
 // Define the questions
 let questions = [
     {
@@ -121,11 +122,6 @@ for (let i = 0; i < questions.length; i++) {
     answers.push({answered: false, correct: null, answer: null})
 }
 
-// Add event listeners
-restartBtn.addEventListener('click', restart);
-previousBtn.addEventListener('click', previous);
-nextBtn.addEventListener('click', next);
-submitBtn.addEventListener('click', submit);
 
 
 /** 
@@ -141,7 +137,15 @@ function beginQuiz () {
     displayQandA()
 }
 
-beginQuiz();
+// Add event listeners
+if (previousBtn !== null ){
+   // restartBtn.addEventListener('click', restart);
+    previousBtn.addEventListener('click', previous);
+    nextBtn.addEventListener('click', next);
+    submitBtn.addEventListener('click', submit);
+
+    beginQuiz();
+}
 
 function displayQandA() {
 
@@ -252,6 +256,7 @@ function restart() {
     previousBtn.classList.remove('hide');
     nextBtn.classList.remove('hide');
     submitBtn.classList.remove('hide');
+    questionText.classList.add('hide');
     score= 0;
     userScore.innerHTML = score;
     beginQuiz();
