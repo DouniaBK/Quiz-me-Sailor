@@ -288,6 +288,7 @@ function submit () {
         optionBtn[i].classList.add('hide');
         nextBtn.classList.add('hide');
         questionText.classList.remove('hide');
+        messageElement.classList.add('hide');
         questionText.innerHTML = "Keep practicing, Sailor! The sea calls."
     }
  }

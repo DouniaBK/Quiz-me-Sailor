@@ -166,6 +166,7 @@
 #question-text {
     padding-left: 1rem;
     font-size: x-large;
+    text-align: center;
 }
 
 .choice-prefix {
