@@ -32,12 +32,14 @@
                 General Sailing license. The Practice test is designed to ensure that the candidate has a good
                  knowledge of the law and safety practices applicable when operating a recreational vessel. </p>
                 
-                 <label class="contact_line" for="fname">Sailor Name</label>
+                <label class="contact_line" for="fname">Sailor Name</label>
                 <input class="contact_input" type="text" id="fname" name="firstname" placeholder="Enter your name, Sailor!" required>
                 <div id="start-btn">
-                <a href="quiz.html" target="_self" rel="noopener" aria-label=" start the quiz">
-                <button id="start-quiz-btn" type="submit" onClick="saveName(event)">Start the Quiz</button>
-                </a> </div>
+                <button id="start-quiz-btn" type="submit" onClick="saveName()">Start the Quiz</button>
+                </div>
+                <div id="message" class="message">
+        
+                </div>
                 </div>
         </form>
         </div>        

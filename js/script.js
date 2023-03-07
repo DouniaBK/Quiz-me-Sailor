@@ -10,6 +10,12 @@ const messageElement = document.getElementById('message')
 let currentQuestion = 0;
 var score = 0;
 
+// Extract URL parameters
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const name = urlParams.get('name')
+console.log('The name is ', name);
+
 
 // Define the questions
 let questions = [
@@ -342,3 +348,31 @@ function enableBtns () {
     }
 }
 
+/**
+ * Save the name of the user 
+ * Make sure the user enters a name
+ * Remind the user to enter a name to start the quiz
+ */
+
+function saveName () {
+    // Reset message
+    messageElement.innerHTML = ""
+
+    // Get the name of the user
+    const username = document.getElementById('fname').value
+
+    // Check if name is entered
+    if (username.length > 0) {
+        // Create new url
+        const url_new = `quiz.html?name=${username}`
+
+        // Go to URL
+        window.location.href = url_new;
+    } else {
+        // Show message if name was not entered
+        messageElement.innerHTML = "Please enter your username"
+    }
+
+
+
+}
