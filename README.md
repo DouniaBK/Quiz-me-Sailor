@@ -1,6 +1,8 @@
 Quiz me, Sailor! is a short practice test that helps sailors get prepared for the actual test to acquire their General boat license to sail both commercially and privately. The quiz home page consists of a brief introduction to the General Boat Sailing license explaining further that this is just a practice test and not the actual test that needs to be conducted by the proper authority. After entering their name, the user referred to as a sailor throughout the site is redirected to the sailing quiz consisting of 10 scored questions.
 
 Practice tests for sailing can be a daunting experience that stresses the life-or-death situations on rough seas if one does not know what to do. Therefore, I chose a rather simple yet playful aesthetic that takes the seriousness out of such tests and invites the user into a clean and positive learning environment with a hint of sailing culture that encourages the user to think, keep practicing, and learn from mistakes. 
+
+
 # Table of Contents
 1. User Experience
     * Goals
@@ -35,7 +37,7 @@ Wireframes were done using Figma.
 
 ## Header and logo:
 
-![Welcome aboard](images/header-logo.png)
+![Welcome aboard](assets/images/header-logo.png)
 
 As the user is greeted by the Captain aboard he is welcomed by a minimal aesthetic design featuring soothing oceanic colors that rest the eye and helps focus the user's attention on the license practice test. The logo “Quiz me Sailor!” design colors and the Welcome aboard sign of a Captain offer a clear first impression and understanding of the purpose of the site which is to test one’s knowledge about sailing safety and protocol. 
 
@@ -45,13 +47,13 @@ To keep a clear vision of what the user is about to do, a short introduction sum
 
 ## Quiz page:
 
-![Welcome aboard](images/quiz-area.png)
+![Welcome aboard](assets/images/quiz-area.png)
 
 The quiz page features 10 questions test about sailing safety and protocol, each question features four answers to choose from (A to D). Additionally, a score panel and control buttons are also featured above and below the Q and A area. 
 
 ## Q and A area:
 
-![Q and A area](images/QandA.png)
+![Q and A area](assets/images/q-and-a.png)
 
 The user will pass a test of ten questions and each question features four answers to choose from (see image above). The user can only click on one answer per question. Once the user clicks on an answer the other answer options are disabled (disableBtn function) then the user is informed whether he answered the question correctly or not. The correct answer turns green and the incorrect answer red. A message below the Q and A area appears confirming and informing the user of the answer he chose (see image above) and the correct answer.
 
@@ -61,7 +63,7 @@ Above the Q and A area, a score out of 10 is displayed. Every time the user answ
 
 ## Control buttons
 
-![Control buttons](images/controls.png)
+![Control buttons](assets/images/controls.png)
 
 ### Restart
 
@@ -75,9 +77,9 @@ This button appears once the second question appears, answered or not. It allows
 ### Submit
 
 Allows the user to end the quiz, submit the answered question and check the final score. 
- ### Final Message
+ ### Finale Message
 
- ![Submit quiz message](images/quiz-end.png)
+ ![Submit quiz message](assets/images/quiz-end.png)
 
  On clicking a message appears encouraging further practice as done in sailing school “never congratulate, always push more practice!”.
 
