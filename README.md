@@ -107,8 +107,6 @@ Allows the user to end the quiz, submit the answered question and check the fina
      * To create wireframes
   2. **Favicon Generator**
      * to create a favicon
-  3. **Canva**
-     * To create a logo 
   4. **freepik** 
      * To download free images
   5. **Resizepixe**
@@ -116,25 +114,25 @@ Allows the user to end the quiz, submit the answered question and check the fina
 
 # Methods
 ## Validation
-  * HTML has been validated with W3C HTML5 Validator and no errors were found.
-  * CSS has been validated with W3C CSS Validator and no errors were found.
-  * Javascript has been tested and validated using Jshint"""""""""
+  * HTML has been validated with W3C HTML5 Validator and the errors found were all corrected.
+  * CSS has been validated with W3C CSS Validator and the errors found were all corrected.
+  * Javascript has been tested and validated using Jshint and the errors found were all corrected.
   
 ## Testing
   * The site has been through a rigorous testing process of sailing quiz enthusiasts among friends and family members, including my mentor and myself.
   * Each feature was first tested on the developer tools before being added to the VScode
   * The user cannot start the quiz without filling in the username field
   * Various bugs have been reported and solved (see bugs section for further details) 
-  * As the creator clicked endlessly on all the buttons and passed and failed the quiz to cover all scenarios that the user might go through. 
+  * As the creator, I checked manually all the features and passed and failed the quiz to cover all scenarios that the user might go through. 
 ## Mobile Testing
   * The site was tested personally on IOS and Android using Chrome and Safari going through all pages and functions
-  * The responsiveness has been adjusted for different screens including mobile screenss
+  * The responsiveness has been adjusted for different screens including mobile screens
   
 ## Desktop Testing
    * The site was tested by different people on Chrome where it has initially been developed
    * The site has continuously been tested on Edge by friends
 ## Accessibility
-![Site Perfomance Score](./assets/css/images/performance-lighthouse.png)
+![Site Perfomance Score](assets/images/site-performance-rate.png)
   * The overall performance of the site has been tested using Lighthouse and the site has passed the accessibility test
 
 

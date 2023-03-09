@@ -130,8 +130,6 @@ for (let i = 0; i < questions.length; i++) {
     answers.push({answered: false, correct: null, answer: null})
 }
 
-
-
 /** 
  * The page loads and the script gets executed
  *  with a feature that will allow the page to jump to
