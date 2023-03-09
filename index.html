@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
+<meta name="Quiz me, Sailor!" content="Boat Licence Practice Test"/>
 <link rel="stylesheet" href="assets/css/style.css">
 <title>Quiz me Sailor!</title>
 </head>
@@ -13,40 +13,38 @@
 
     <header>
         <div class="header-background">
-            <img id= "background-image" src="images/logo-welcome-aboard.jpg" alt="background-image-sailor-salute"> 
+            <img id= "background-image" src="assets/images/background-image-welcome-aboard.jpg" alt="background-image-sailor-salute"> 
             <h1 id="logo">Quiz me Sailor!</h1>  
        </div>
 
     </header>
     
-    <div class="wrapper">
-    <div class="container-index">
-        <div class="content">
-            <h1 id="quiz-header">General Boat Licence Practice Test</h1> 
-        <form class="player-form" action="/workspace/Quizz-My-English/quiz.html" method="get"></form>
+    <main class="wrapper">
+        <section class="container-index">
+            <div class="content">
+                <h1 id="quiz-header">General Boat Licence Practice Test</h1> 
+                 <form class="player-form" action="/workspace/Quizz-My-English/quiz.html" method="get"></form>
            
-            <p id ="short-intro">The General Boat Licence Practice Test is a requirement for anyone wishing to obtain their 
-                General Sailing license. The Practice test is designed to ensure that the candidate has a good
-                 knowledge of the law and safety practices applicable when operating a recreational vessel. </p>
+                <p id ="short-intro">The General Boat Licence Practice Test is a requirement for anyone wishing to obtain their 
+                    General Sailing license. The Practice test is designed to ensure that the candidate has a good
+                     knowledge of the law and safety practices applicable when operating a recreational vessel. Please note that this is just
+                    the practice test and not the actual test.</p>
                 
                 <label class="contact_line" for="fname">Sailor Name</label>
                 <input class="contact_input" type="text" id="fname" name="firstname" placeholder="Enter your name, Sailor!" required>
                 <div id="start-btn">
-                <button id="start-quiz-btn" type="submit" onClick="saveName()">Start the Quiz</button>
+                    <button id="start-quiz-btn" type="submit" onClick="saveName()">Start the Quiz</button>
                 </div>
                 <div id="message" class="message">
-        
                 </div>
-                </div>
-        </form>
-        </div>        
-    </div>
-    </div>
-    </div>
-      
+                </form>
+            </div>
+       
+        </section>        
+    </main>
+    
 
-
-<script src="js/script.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
 

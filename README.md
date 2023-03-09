@@ -1,6 +1,6 @@
 Quiz me, Sailor! is a short practice test that helps sailors get prepared for the actual test to acquire their General boat license to sail both commercially and privately. The quiz home page consists of a brief introduction to the General Boat Sailing license explaining further that this is just a practice test and not the actual test that needs to be conducted by the proper authority. After entering their name, the user referred to as a sailor throughout the site is redirected to the sailing quiz consisting of 10 scored questions.
 
-Practice tests for sailing can be a daunting experience that stresses the life-or-death situations on rough seas if one does not know what to do. Therefore, I chose a rather simple yet playful aesthetic that takes the seriousness out of such tests and invites the user into a clean and positive learning environment that encourages the user to think, keep practicing, and learn from mistakes. 
+Practice tests for sailing can be a daunting experience that stresses the life-or-death situations on rough seas if one does not know what to do. Therefore, I chose a rather simple yet playful aesthetic that takes the seriousness out of such tests and invites the user into a clean and positive learning environment with a hint of sailing culture that encourages the user to think, keep practicing, and learn from mistakes. 
 # Table of Contents
 1. User Experience
     * Goals
@@ -19,11 +19,12 @@ Practice tests for sailing can be a daunting experience that stresses the life-o
 # User Experience
 
 ## Goals
+
 The target users for the boat license quiz are sailors training to acquire or renew their licenses to work in or navigate a sailing vessel privately and commercially. To pass the test, these sailors need to practice.
 
 ## Design
 
-My choice of design aimed at balancing seriousness and playfulness and thus, I created a playful yet minimalistic sailing theme in words and design to help the user think clearly when assessing dangerous situations at sea mentioned on the practice test without feeling overwhelmed by the site features. The design is meant to give the user, referred to as the sailor, an immersive and simple environment that they can navigate effortlessly, balancing the seriousness behind sailing protocols and the playfulness and fun one has sailing.
+My choice of design aimed at balancing seriousness and playfulness and thus, I created a playful yet minimalistic sailing theme in words and design to help the user think clearly when assessing dangerous situations at sea mentioned on the practice test without feeling overwhelmed by the site features. The design is meant to immerse the user, referred to as the sailor, in the sailing culture using sailing dialect and providing a simple environment with intuitive navigation, balancing the seriousness behind sailing protocol tests and the playfulness and fun of sailing.
 
 ### Wireframes
 
@@ -49,10 +50,13 @@ To keep a clear vision of what the user is about to do, a short introduction sum
 The quiz page features 10 questions test about sailing safety and protocol, each question features four answers to choose from (A to D). Additionally, a score panel and control buttons are also featured above and below the Q and A area. 
 
 ## Q and A area:
+
 ![Q and A area](images/QandA.png)
+
 The user will pass a test of ten questions and each question features four answers to choose from (see image above). The user can only click on one answer per question. Once the user clicks on an answer the other answer options are disabled (disableBtn function) then the user is informed whether he answered the question correctly or not. The correct answer turns green and the incorrect answer red. A message below the Q and A area appears confirming and informing the user of the answer he chose (see image above) and the correct answer.
 
 ## Score:
+
 Above the Q and A area, a score out of 10 is displayed. Every time the user answers correctly the score increments by 1 point. The score is saved and displayed throughout the test and at the end of the quiz when the user submits, they will see the final score accompanied by an encouraging message to keep practicing as done at sailing school and by the sea rule don't congratulate a sea mate but encourage to keep practicing and learning because the sea is unforgiving and one has to ways stay sharp.
 
 ## Control buttons
@@ -60,16 +64,22 @@ Above the Q and A area, a score out of 10 is displayed. Every time the user answ
 ![Control buttons](images/controls.png)
 
 ### Restart
+
 Allows the user to stop the quiz and go back to the home page and restart from the beginning.
 ### Next
+
 Allows the user to skip to the next answer after answering or choosing not to.
 ### Previous
+
 This button appears once the second question appears, answered or not. It allows the user to go back to previous questions and check the answers if needed.
 ### Submit
-![Submit quiz message](images/quiz-end.png)
-Allows the user to end the quiz, submit the answered question and check the final score. On clicking a message appears encouraging further practice as done in sailing school “never congratulate, always push practice!”.
 
+Allows the user to end the quiz, submit the answered question and check the final score. 
+ ### Final Message
 
+ ![Submit quiz message](images/quiz-end.png)
+
+ On clicking a message appears encouraging further practice as done in sailing school “never congratulate, always push more practice!”.
 
 # Technologies 
 

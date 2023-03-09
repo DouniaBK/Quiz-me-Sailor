@@ -240,7 +240,7 @@ function resolveQuestion() {
     if (is_correct_answer ) { // If the answer is correct
         messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)}. That is correct, sailor!`
     } else { // If the answer is incorrect display message
-        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)}. That is incorrect, mate! The correct answer is ${answeredNumberToLetter(correct_answer)}.`
+        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)} and you just sunk, sailor!. The correct answer is ${answeredNumberToLetter(correct_answer)}.`
     }
 }
 
@@ -317,7 +317,7 @@ function submit () {
         nextBtn.classList.add('hide');
         questionText.classList.remove('hide');
         messageElement.classList.add('hide');
-        questionText.innerHTML = "Keep practicing, Sailor! The sea calls."
+        questionText.innerHTML = "Don't sink, sailor! Just keep calm and practice"
     }
  }
 
