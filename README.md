@@ -133,7 +133,7 @@ Allows the user to end the quiz, submit the answered question and check the fina
    * The site has continuously been tested on Edge by friends
 ## Accessibility
 ![Site Perfomance Score](assets/images/site-performance-rate.png)
-  * The overall performance of the site has been tested using Lighthouse and the site has passed the accessibility test
+  * The overall performance of the site has been tested in desktop and mobile using Lighthouse and the site has passed the accessibility test
 
 
 # Bugs
@@ -150,12 +150,15 @@ The theme of the previous version of the quiz was English grammar with true or f
 
 
 # Deployment
+
 * The site was deployed to GitHub following the code institute video instructions
    1. Go to the Settings page of the repository
    2. Scroll down to the Github Pages section
    3. Select the Master Branch as the source and Confirm the selection
-   4. After a minute or two and it should be live for viewing. [You will find the link here](https://douniabk.github.io/........./)
+   4. After a minute or two and it should be live for viewing. [You will find the link here](https://douniabk.github.io/Quiz-me-Sailor/index.html?)
+
 # Credits and Contact
+
 ## Content
 * The quiz questions are from [New South Wales - General Licence](https://https://www.easy-quizzz.com/au/learners-test/nsw-boat-licence-test/boat-licence-practice-test/)
 * Part of the initial structure of the javascript quiz code has been done following a guide from [Coding Ninjas](https://www.codingninjas.com)

@@ -130,7 +130,11 @@
 
 #quiz-header {
     text-align: center;
-    padding: 2rem;
+    padding: 2rem 0 0 0;
+}
+
+#quiz-header-subtitle {
+    padding-bottom: 2rem;
 }
 
 /* The control buttons */
