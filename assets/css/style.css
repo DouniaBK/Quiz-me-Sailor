@@ -11,7 +11,14 @@
 }
 
 /* Header */
-.header-background {
+.header-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+.header-text {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +33,7 @@
 #logo {
     width: 100%;
     text-align: center;
-    font-size: 7rem;
+    font-size: 5rem;
     font-weight: 600;
     color: darkcyan;
 }
@@ -39,6 +46,7 @@
 .container-index {
     margin: auto;
     width: 50%;
+    min-width: 768px;
     padding: 10px;
     top: 10%;
     display: flex;
@@ -64,6 +72,11 @@
 
 #short-intro {
     text-align: justify;
+}
+
+#message {
+    font-size: larger;
+    text-align: center;
 }
 
 /*Username field*/
@@ -115,17 +128,17 @@
 
 .container {
     margin: auto;
-    width: 70%;
+    width: 50%;
+    min-width: 768px;
     padding: 10px;
-    top: 10%;
     display: flex;
-    position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .content-quiz {
-    width: 70%;
+   /*width: 70%;*/
 }
 
 #quiz-header {
@@ -134,7 +147,7 @@
 }
 
 #quiz-header-subtitle {
-    padding-bottom: 2rem;
+    margin: 2rem;
 }
 
 /* The control buttons */
@@ -170,9 +183,11 @@
 }
 
 #question-text {
-    padding-left: 1rem;
+    margin: 1rem;
+    margin-left: 1rem;
     font-size: x-large;
     text-align: center;
+
 }
 
 /*The answer are alphabetically ordered from A to D */
@@ -191,7 +206,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding-left: 1rem;
+    margin-left: 1rem;
+    text-align: left;
 }
 
 .btn-option {
@@ -237,56 +253,87 @@
         width: 25%;
     }
 
-    #quiz-header {
-    font-size: x-large;
-    }
     .contact_line {
-        font-size: x-large;
-        width: 100%;
+        font-size: medium;
+        margin-top: 2rem;
     }
-    .contact_input {
-        width: 100%;
-    }
+
     #start-btn {
         width: 100%;
     }
 
-    .content-quiz {
-        width: 100%;
+    .content {
+        padding: 0px;
     }
 
-    .content {
-        width: 100%;
+    #question-text {
+        font-size: small !important;
+    }
+
+    .choice-text {
+        font-size: small !important;
+    }
+
+    .btn {
+        padding: 10px;
+        font-size: small !important;
+    }
+
+    #short-intro {
+        font-size: medium;
+    }
+
+    #message {
+        font-size: small;
+    }
+    .score {
+        font-size: medium !important;
     }
 }
 
 @media only screen and (max-width: 768px) {
     
+    #quiz-header {
+        font-size: 4.5vw !important;
+        padding: 0.2rem !important;
+    }
+
+    .header-inner {
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    #logo {
+        font-size: 8vw !important;
+    }
+
     #background-image {
         height: 18%;
-        margin-top: 2rem;
+        margin-top: 0px;
+        width: 25%;
     }
-    #logo {
-        font-size: xxx-large;
-    }
-
-    .content {
-        width: 100%;
-    }
-
     .container {
         width: 100%;
-            
+        min-width: 0px;
     }
 
-    #quiz-header {
-        font-size: x-large;
-        padding: 1rem;
+    .container-index {
+        width: 100%;
+        min-width: 0px;
     }
-    .content-quiz {
-    width: 100%;
-}
-   
+
+    #question-text {
+        font-size: large;
+    }
+
+    .choice-text {
+        font-size: medium;
+    }
+    .btn {
+        padding: 10px;
+        font-size: medium;
+    }
 }
 
 @media only screen and (max-width: 992px) {
@@ -297,46 +344,20 @@
         font-size: xxx-large;
     }
 
-    .container-index {
-        width: 80%;
-    }
-
-
-    .container {
-        width: 80%;
-       
-            
-    }
     .score {
-        font-size: x-large;
+        font-size: large;
         text-align: center;
-        margin: 1rem
+        margin: 0.2rem;
     }
 
     #quiz-header {
         font-size: x-large;
         padding: 1rem;
     }
-
-    .content-quiz {
-    width: 100%;
-}
-    .content {
-    width: 100%;
-}
     
 }
 
 @media only screen and (max-width: 1440px){
     
-    #background-image {
-        height: 18%;
-    }
-    .content-quiz {
-        width: 100%;
-    }
-    .content {
-        width: 100%;
-    }
    
 }
