@@ -33,7 +33,7 @@
 /* Index page */
 
 .wrapper{
-    height: 100vh;
+    /* height: 100vh;*/
 }
 
 .container-index {
@@ -197,7 +197,6 @@
 .btn-option {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: flex-start;
 }
 

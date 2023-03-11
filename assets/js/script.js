@@ -10,11 +10,15 @@ const messageElement = document.getElementById('message')
 let currentQuestion = 0;
 var score = 0;
 
-// Extract URL parameters
+// Extract username from URL
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const name = urlParams.get('name')
-console.log('The name is ', name);
+let name = urlParams.get('name')
+
+// Capitalize username
+if (name !== null) {
+    name = name.charAt(0).toUpperCase() + name.slice(1);
+}
 
 
 // Define the questions
@@ -151,6 +155,8 @@ if (previousBtn !== null ){
 
     beginQuiz();
 }
+
+
 /**
  * displays the questions and answers
  * logs and saves the answers
@@ -159,6 +165,7 @@ if (previousBtn !== null ){
  */
 
 function displayQandA() {
+    console.log('displayQandA', currentQuestion, score)
 
     // Reset user message
     messageElement.innerHTML = "";
@@ -178,7 +185,7 @@ function displayQandA() {
                 disableBtns()
                 const is_correct_answer = questions[currentQuestion].answers[i].answer;
 
-                // Log answer to answers object so it is saved in the object
+                // Save answer
                 answers[currentQuestion].answered = true;
                 answers[currentQuestion].correct = is_correct_answer;
                 answers[currentQuestion].answer = i;
@@ -187,9 +194,13 @@ function displayQandA() {
                     // Increment the score
                     score++
                 }
+                // Resolve the question
                 resolveQuestion()
+                // Set the score
                 userScore.innerHTML = score;
             }
+        } else {
+            btn.onclick = undefined
         }
     }
     
@@ -207,7 +218,10 @@ function displayQandA() {
     } else {
         previousBtn.classList.add('hide');
     }
-
+    
+    if (currentQuestion === 9) {
+        nextBtn.classList.add('hide');
+    } 
 }
 /**
  * shows the correct answer in green and incorrect in red
@@ -217,8 +231,6 @@ function displayQandA() {
  */
 
 function resolveQuestion() {
-
-    console.log("answers[currentQuestion]", answers[currentQuestion])
 
     // Show the actually correct answer for each button/option
     let correct_answer = 0;
@@ -266,7 +278,6 @@ function answeredNumberToLetter(number) {
 /**
  * reset the score
  * remove the hide class from elements
- * class beginQuiz()
  */
 
 function restart() {
@@ -307,21 +318,28 @@ function previous () {
  * */ 
 function submit () {
     
+    // Hide all buttons and elements
    for (let i = 0; i < optionBtn.length; i++){
-
-      if(currentQuestion =>8) {
-        previousBtn.classList.add('hide');
-        optionBtn[i].classList.add('hide');
-        nextBtn.classList.add('hide');
-        questionText.classList.remove('hide');
-        messageElement.classList.add('hide');
-        questionText.innerHTML = "Don't sink, sailor! Just keep calm and practice"
+    optionBtn[i].classList.add('hide');
     }
- }
-
-    previousBtn.classList.add('hide');
     submitBtn.classList.add('hide');
-    
+    previousBtn.classList.add('hide');
+    nextBtn.classList.add('hide');
+    questionText.classList.remove('hide');
+    messageElement.classList.add('hide');
+    previousBtn.classList.add('hide');
+
+    let message = ''
+    if(score <8) {
+        message = `Ohh, looks like you sank the ship, ${name}. Just keep calm and practice sailor.`;
+    }
+    if(score >= 7) {
+        message = `Alrighty ${name}. Passed, but scraped the reef just a little bit :)`;
+    }
+    if(score === 10) {
+        message = `Ahoi, sailor ${name} and welcome aboard. Go collect your vessel and lets go for some treasure huntn.`;
+    }
+    questionText.innerHTML = message;
 }
 
 /** Once the user has clicked on an answer the rest of
@@ -331,17 +349,14 @@ function submit () {
 function disableBtns () {
 
     for (let i = 0; i < optionBtn.length; i++) {
-        console.log('disableBtns optionBtn[i]', optionBtn[i])
-        optionBtn[i].disabled = true
-        
+        optionBtn[i].disabled = true;
     }
 }
 /** Enables the use of the buttons */
 function enableBtns () {
 
     for (let i = 0; i < optionBtn.length; i++) {
-        console.log('enableBtns optionBtn[i]', optionBtn[i])
-        optionBtn[i].disabled = false
+        optionBtn[i].disabled = false;
         
     }
 }
@@ -357,20 +372,28 @@ function saveName () {
     messageElement.innerHTML = ""
 
     // Get the name of the user
-    const username = document.getElementById('fname').value
+    const username = document.getElementById('fname').value;
 
     // Check if name is entered
-    if (username.length > 0) {
+    if (username.length > 0 && validateUsername(username)) {
         // Create new url
-        const url_new = `quiz.html?name=${username}`
+        const url_new = `quiz.html?name=${username}`;
 
         // Go to URL
         window.location.href = url_new;
     } else {
         // Show message if name was not entered
-        messageElement.innerHTML = "Please enter your username"
+        messageElement.innerHTML = "Please enter a valid username";
     }
+}
 
+/**
+ * Validation function for the username using regular expressions
+ */
+const validateUsername = (username) => {
+    // Create a regex rule 
+    const rule = /^[a-zA-Z\-]+$/;
 
-
+    // Evaluate and return 
+    return rule.test(username);
 }
