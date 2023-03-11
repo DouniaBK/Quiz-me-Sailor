@@ -98,6 +98,7 @@
     background: #bce0e11f;
     border: 0.5px solid #bce0e1;
     width: 20rem;
+    text-align: center;
 }
 /*Start quiz button on the index page*/
 
@@ -148,6 +149,7 @@
 
 #quiz-header-subtitle {
     margin: 2rem;
+    font-size: large;
 }
 
 /* The control buttons */
@@ -249,17 +251,17 @@
 
     #background-image {
         height: 10%;
-        margin-top: 7rem;
+        margin-top: 3rem;
         width: 25%;
     }
 
     .contact_line {
-        font-size: medium;
+        font-size: large;
         margin-top: 2rem;
     }
 
     #start-btn {
-        width: 100%;
+        padding: 0.5rem;
     }
 
     .content {
@@ -267,7 +269,7 @@
     }
 
     #question-text {
-        font-size: small !important;
+        font-size: medium !important;
     }
 
     .choice-text {
@@ -286,8 +288,21 @@
     #message {
         font-size: small;
     }
+
     .score {
         font-size: medium !important;
+    }
+
+    #quiz-header-subtitle {
+        font-size: medium;
+    }
+
+    #start-quiz-btn {
+        font-size: medium;
+    }
+
+    .contact_input {
+        font-size: medium;
     }
 }
 
