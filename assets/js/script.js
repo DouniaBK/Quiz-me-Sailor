@@ -177,6 +177,7 @@ function displayQandA() {
     for (let i = 0; i < optionBtn.length; i++) {
         const btn = optionBtn[i]
         btn.style.backgroundColor = '#bce0e1'
+        btn.style.border = '2px solid white'
         btn.lastElementChild.innerHTML = questions[currentQuestion].answers[i].option;
 
         if (answers[currentQuestion].answered === false ) {
@@ -242,15 +243,19 @@ function resolveQuestion() {
             correct_answer = btnNr;
         } else {
             btn.style.backgroundColor = '#eba1a1'
+            // If the answer was wrong, give it a dotted border
+            if (answers[currentQuestion].answer === btnNr) {
+                btn.style.border = '2px dashed #A40000'
+            }
         }
     }
     
     // Show if the user actually answered correctly
     const is_correct_answer = answers[currentQuestion].correct;
     if (is_correct_answer ) { // If the answer is correct
-        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)}. That is correct, sailor!`
+        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)}. That is correct, sailor ${name}!`
     } else { // If the answer is incorrect display message
-        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)} and you just sunk, sailor!. The correct answer is ${answeredNumberToLetter(correct_answer)}.`
+        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)} and you just sunk, ${name}!. The correct answer is ${answeredNumberToLetter(correct_answer)}.`
     }
 }
 
@@ -345,13 +350,13 @@ function submit () {
 /** Once the user has clicked on an answer the rest of
  * the options are disabled to avoid changing the score/cheating
  */
-
 function disableBtns () {
 
     for (let i = 0; i < optionBtn.length; i++) {
         optionBtn[i].disabled = true;
     }
 }
+
 /** Enables the use of the buttons */
 function enableBtns () {
 
