@@ -102,7 +102,7 @@ Allows the user to end the quiz, submit the answered questions and check the fin
   ### CSS
   * Styling
   ### Javascript
-  * Logic
+  * Running functions for interactive components
 ## Libraries
  ### Google Fonts
  * Font Styles.
@@ -148,15 +148,13 @@ Allows the user to end the quiz, submit the answered questions and check the fin
 
 # Bugs
 
-The score was incremented upon clicking on the correct answer several times this was solved by……
+* The score was incremented upon clicking on the correct answer several times. This was solved by saving the users answers and not allowing the user to answer more than once. This furthermore solve an additional issue, whereby the previous button allowed cheating by answering the incorrect answer for instance then clicking next and immediately after clicking previous to answer the previous question.
 
-The previous button allowed cheating by answering the incorrect answer for instance then clicking next and immediately after clicking previous to answer the previous question correctly and increment the score as the correct answer was not saved this was solved by: ……
+* The submit button ended the quiz, but the answer choices for the first question were still displayed this was solved by hiding the unneccessary elements including the questions.
 
-The submit button ended the quiz but the answer choices for the first question were still displayed this was solved by……..
+* The username field didn't save the users's name to display it at the end of the quiz and in the messages. This was solved by handing the username to the quiz page via an URL parameter.
 
-The username field didn't save the 's name to display it at the end of the quiz and in the messages this was solved by.......
-
-The theme of the previous version of the quiz was English grammar with true or false option answers. However, that was boring and uninspiring therefore, it was solved by changing the theme to sailing which is a fascination of mine with more challenging features.
+* The theme of the previous version of the quiz was English grammar with true or false option answers. However, that was boring and uninspiring therefore, it was solved by changing the theme to sailing which is a fascination of mine with more challenging features.
 
 
 # Deployment
@@ -165,7 +163,7 @@ The theme of the previous version of the quiz was English grammar with true or f
    1. Go to the Settings page of the repository
    2. Scroll down to the Github Pages section
    3. Select the Master Branch as the source and Confirm the selection
-   4. After a minute or two and it should be live for viewing. [You will find the link here](https://douniabk.github.io/Quiz-me-Sailor/index.html?)
+   4. After a minute or two and it should be live for viewing. [You will find the link here](https://douniabk.github.io/Quiz-me-Sailor/)
 
 # Credits and Contact
 

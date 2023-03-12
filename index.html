@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Quiz me, Sailor!" content="Boat Licence Practice Test">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Quiz me Sailor!</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="Quiz me, Sailor!" content="Boat Licence Practice Test">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Quiz me Sailor!</title>
+        
+        <!--favicon links from https://favicon.io/ -->
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        </head>
 
 <body>
 
@@ -24,7 +29,7 @@
     <main class="wrapper">
         <section class="container-index">
             <div class="content">
-           
+           <!-- Short introduction and user name field and the start button are included here -->
                     <p id ="short-intro">
                     The General Boat Licence Practice Test is a requirement for anyone wishing to obtain their 
                     General Sailing license. The Practice test is designed to ensure that the candidate has a good
@@ -35,10 +40,11 @@
 
                     <label class="contact_line" for="fname">Sailor Name</label>
                     <input class="contact_input" type="text" id="fname" name="firstname" placeholder="Enter your name, Sailor!" required>
-                
+                    <!-- the start button redirects the user to the quiz page -->
                     <div id="start-btn">
                         <button id="start-quiz-btn" type="submit" onClick="saveName()">Start the Quiz</button>
                     </div>
+                    <!-- Invalide data input message incase the user enters special quaracters or just spaces for example as a userame.-->
                     <div id="message" class="message"></div>
                 
             </div>
