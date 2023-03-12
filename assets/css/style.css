@@ -25,9 +25,9 @@
 }
 
 #background-image {
-        height: 30%;
+        max-height: 20%;
         margin-top: 7rem;
-        width: 20%;
+        max-width: 15%;
 }
 
 #logo {
@@ -82,7 +82,6 @@
 /*Username field*/
 
 .contact_line {
-    margin-top: 3.1rem;
     margin-bottom: 0.1rem;
     font-size: xx-large;
 }
@@ -139,7 +138,7 @@
 }
 
 .content-quiz {
-   /*width: 70%;*/
+   width: 70%;
 }
 
 #quiz-header {
@@ -251,18 +250,18 @@
     }
 
     #background-image {
-        height: 10%;
-        margin-top: 3rem;
-        width: 25%;
+        max-height: 20%;
+        margin-top: 1rem;
+        max-width: 25%;
     }
 
     .contact_line {
         font-size: large;
-        margin-top: 2rem;
     }
 
     #start-btn {
         padding: 0.5rem;
+        width: 80%;
     }
 
     .content {
@@ -304,6 +303,11 @@
 
     .contact_input {
         font-size: medium;
+        width: 80%;
+    }
+
+    .answer-options {
+        padding: 5px !important;
     }
 }
 
@@ -311,11 +315,10 @@
     
     #quiz-header {
         font-size: 4.5vw !important;
-        padding: 0.2rem !important;
+       
     }
 
     .header-inner {
-        flex-direction: row;
         justify-content: center;
         margin-top: 1rem;
     }
@@ -325,10 +328,11 @@
     }
 
     #background-image {
-        height: 18%;
-        margin-top: 0px;
-        width: 25%;
+        max-height: 20%;
+        margin-top: 1rem;
+        max-width: 25%;
     }
+
     .container {
         width: 100%;
         min-width: 0px;
@@ -350,6 +354,15 @@
         padding: 10px;
         font-size: medium;
     }
+    .content-quiz {
+       width: 100%;
+    }
+    .answer-options {
+        padding: 10px;
+    }
+    #short-intro {
+        width: 85%;
+    }
 }
 
 @media only screen and (max-width: 992px) {
@@ -368,7 +381,6 @@
 
     #quiz-header {
         font-size: x-large;
-        padding: 1rem;
     }
     
 }

@@ -83,7 +83,7 @@ let questions = [
         
     },
     {
-        question: "7. When travelling DOWNSTREAM (toward the sea) on which side should you keep this type of navigation mark to stay in the channel?",
+        question: "7. When travelling DOWNSTREAM (toward the sea) on which side should you keep the proper navigation mark to stay in the channel?",
         answers: [
             {option:"Your port (left-hand) side", answer: true},
             {option:"Your starboard (right-hand) side", answer: false},
@@ -113,7 +113,7 @@ let questions = [
         
     },
     {
-        question: "10. When traveling DOWNSTREAM (toward the sea), on which side of your vessel should you keep this red marker?",
+        question: "10. When traveling DOWNSTREAM (toward the sea), on which side of your vessel should you keep the red marker?",
         answers: [
             {option:"On the port (left-hand) side", answer: false},
             {option:"On the starboard (right-hand) side", answer: true},
@@ -255,7 +255,7 @@ function resolveQuestion() {
     if (is_correct_answer ) { // If the answer is correct
         messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)}. That is correct, sailor ${name}!`
     } else { // If the answer is incorrect display message
-        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)} and you just sunk, ${name}!. The correct answer is ${answeredNumberToLetter(correct_answer)}.`
+        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)} and you just sunk, sailor ${name}! The correct answer is ${answeredNumberToLetter(correct_answer)}.`
     }
 }
 
