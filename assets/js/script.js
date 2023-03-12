@@ -5,7 +5,7 @@ const submitBtn = document.getElementById('submit');
 const optionBtn = document.getElementsByClassName('btn-option');
 const userScore = document.getElementById('user-score');
 const questionText = document.getElementById('question-text');
-const messageElement = document.getElementById('message')
+const messageElement = document.getElementById('message');
 
 let currentQuestion = 0;
 var score = 0;
@@ -13,7 +13,7 @@ var score = 0;
 // Extract username from URL
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-let name = urlParams.get('name')
+let name = urlParams.get('name');
 
 // Capitalize username
 if (name !== null) {
@@ -122,16 +122,16 @@ let questions = [
         ],
         
     }
-]
+];
 
 
 /**  
  * Initialize empty answers array
  */
-let answers = []
+let answers = [];
 for (let i = 0; i < questions.length; i++) {
     // Push a new entry to the answers array for each question
-    answers.push({answered: false, correct: null, answer: null})
+    answers.push({answered: false, correct: null, answer: null});
 }
 
 /** 
@@ -144,7 +144,7 @@ function beginQuiz () {
     // Set question counter to zero to start at the first question
     currentQuestion = 0;
     // set the index 0 question as the first question in the Html text amongs all questions
-    displayQandA()
+    displayQandA();
 }
 
 // Add event listeners with error handling
@@ -165,7 +165,7 @@ if (previousBtn !== null ){
  */
 
 function displayQandA() {
-    console.log('displayQandA', currentQuestion, score)
+    console.log('displayQandA', currentQuestion, score);
 
     // Reset user message
     messageElement.innerHTML = "";
@@ -175,15 +175,15 @@ function displayQandA() {
 
     // set all buttons' text and call back functions
     for (let i = 0; i < optionBtn.length; i++) {
-        const btn = optionBtn[i]
-        btn.style.backgroundColor = '#bce0e1'
-        btn.style.border = '2px solid white'
+        const btn = optionBtn[i];
+        btn.style.backgroundColor = '#bce0e1';
+        btn.style.border = '2px solid white';
         btn.lastElementChild.innerHTML = questions[currentQuestion].answers[i].option;
 
         if (answers[currentQuestion].answered === false ) {
             // The user is allowed to click on one anwser per question the rest of the answers will then be disabled.
             btn.onclick = () => {
-                disableBtns()
+                disableBtns();
                 const is_correct_answer = questions[currentQuestion].answers[i].answer;
 
                 // Save answer
@@ -193,24 +193,24 @@ function displayQandA() {
 
                 if (is_correct_answer ) { // If the answer is correct
                     // Increment the score
-                    score++
+                    score++;
                 }
                 // Resolve the question
-                resolveQuestion()
+                resolveQuestion();
                 // Set the score
                 userScore.innerHTML = score;
-            }
+            };
         } else {
-            btn.onclick = undefined
+            btn.onclick = undefined;
         }
     }
     
     // If the questions is already answered, show the solution to the user
     // else, enable the buttons, so he can submit his answer
     if (answers[currentQuestion].answered === true ) {
-        resolveQuestion()
+        resolveQuestion();
     } else {
-        enableBtns()
+        enableBtns();
     }
 
     // Hide and show previous button depending on question number
@@ -236,16 +236,16 @@ function resolveQuestion() {
     // Show the actually correct answer for each button/option
     let correct_answer = 0;
     for (let btnNr = 0; btnNr < optionBtn.length; btnNr++) {
-        const btn = optionBtn[btnNr]
+        const btn = optionBtn[btnNr];
         const isCorrect = questions[currentQuestion].answers[btnNr].answer;
         if (isCorrect) {
-            btn.style.backgroundColor = '#4ac54a'
+            btn.style.backgroundColor = '#4ac54a';
             correct_answer = btnNr;
         } else {
-            btn.style.backgroundColor = '#eba1a1'
+            btn.style.backgroundColor = '#eba1a1';
             // If the answer was wrong, give it a dotted border
             if (answers[currentQuestion].answer === btnNr) {
-                btn.style.border = '2px dashed #A40000'
+                btn.style.border = '2px dashed #A40000';
             }
         }
     }
@@ -253,9 +253,9 @@ function resolveQuestion() {
     // Show if the user actually answered correctly
     const is_correct_answer = answers[currentQuestion].correct;
     if (is_correct_answer ) { // If the answer is correct
-        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)}. That is correct, sailor ${name}!`
+        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)}. That is correct, sailor ${name}!`;
     } else { // If the answer is incorrect display message
-        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)} and you just sunk, sailor ${name}! The correct answer is ${answeredNumberToLetter(correct_answer)}.`
+        messageElement.innerHTML = `You answered ${answeredNumberToLetter(answers[currentQuestion].answer)} and you just sunk, sailor ${name}! The correct answer is ${answeredNumberToLetter(correct_answer)}.`;
     }
 }
 
@@ -305,7 +305,7 @@ function restart() {
 function next () {
     if (currentQuestion<9) {
         currentQuestion++;
-        displayQandA()
+        displayQandA();
     }
 }
 
@@ -334,15 +334,15 @@ function submit () {
     messageElement.classList.add('hide');
     previousBtn.classList.add('hide');
 
-    let message = ''
+    let message = '';
     if(score <8) {
-        message = `Ohh, looks like you sank the ship, ${name}. Just keep calm and practice sailor.`;
+        message = `It looks like you sank the ship, sailor ${name}. Just keep calm and practice.`;
     }
     if(score >= 7) {
-        message = `Alrighty ${name}. Passed, but scraped the reef just a little bit :)`;
+        message = `You passed, skipper ${name}! Keep that life jacket on and go scrub the deck.`;
     }
     if(score === 10) {
-        message = `Ahoi, sailor ${name} and welcome aboard. Go collect your vessel and lets go for some treasure huntn.`;
+        message = `Ahoi, skipper ${name} and welcome aboard your first vessel.`;
     }
     questionText.innerHTML = message;
 }
@@ -374,7 +374,7 @@ function enableBtns () {
 
 function saveName () {
     // Reset message
-    messageElement.innerHTML = ""
+    messageElement.innerHTML = "";
 
     // Get the name of the user
     const username = document.getElementById('fname').value;
@@ -388,7 +388,7 @@ function saveName () {
         window.location.href = url_new;
     } else {
         // Show message if name was not entered
-        messageElement.innerHTML = "Please enter a valid username";
+        messageElement.innerHTML = "Please enter a valid username. Special quaracters and spaces are not allowed.";
     }
 }
 
@@ -401,4 +401,4 @@ const validateUsername = (username) => {
 
     // Evaluate and return 
     return rule.test(username);
-}
+};

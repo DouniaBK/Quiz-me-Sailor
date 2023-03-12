@@ -1,3 +1,5 @@
+![Website screenshot](assets/images/screenshot-website.png)
+
 Quiz me, Sailor! is a short practice test that helps sailors get prepared for the actual test to acquire their General boat license to sail both commercially and privately. The quiz home page consists of a brief introduction to the General Boat Sailing license explaining further that this is just a practice test and not the actual test that needs to be conducted by the proper authority. After entering their name, the user referred to as a sailor throughout the site is redirected to the sailing quiz consisting of 10 scored questions.
 
 Practice tests for sailing can be a daunting experience that stresses the life-or-death situations on rough seas if one does not know what to do. Therefore, I chose a rather simple yet playful aesthetic that takes the seriousness out of such tests and invites the user into a clean and positive learning environment with a hint of sailing culture that encourages the user to think, keep practicing, and learn from mistakes. 
@@ -22,16 +24,18 @@ Practice tests for sailing can be a daunting experience that stresses the life-o
 
 ## Goals
 
-The target users for the boat license quiz are sailors training to acquire or renew their licenses to work in or navigate a sailing vessel privately and commercially. To pass the test, these sailors need to practice.
+The target users for the boat license quiz are sailors training to acquire or renew their licenses to work in or navigate a sailing vessel privately and commercially. To pass the test, these sailors need a minimum of 70% score .
 
 ## Design
+
+![Color palette](assets/images/color-palette.png)
 
 My choice of design aimed at balancing seriousness and playfulness and thus, I created a playful yet minimalistic sailing theme in words and design to help the user think clearly when assessing dangerous situations at sea mentioned on the practice test without feeling overwhelmed by the site features. The design is meant to immerse the user, referred to as the sailor, in the sailing culture using sailing dialect and providing a simple environment with intuitive navigation, balancing the seriousness behind sailing protocol tests and the playfulness and fun of sailing.
 
 ### Wireframes
 
 Wireframes were done using Figma.
- * Find the link [here](https://drive.google.com/drive/folders/1AT_jam8VP4DEvOdI0OMSIvATJ82W4k-q?usp=share_link)
+ * Find the link [here](https://drive.google.com/file/d/1QBgsp4bNOjJl9aSi-eT39jxEE8zqUybq/view?usp=sharing)
 
 # Features
 
@@ -43,7 +47,11 @@ As the user is greeted by the Captain aboard he is welcomed by a minimal aesthet
 
 ## Introduction and username field:
 
-To keep a clear vision of what the user is about to do, a short introduction summarising the purpose of the General Boat license test and that this is just the practice test and not the actual written test that needs to be passed at the proper authority office. The user needs to enter their name to start the quiz. The user is then directed toward the quiz questions page.
+To keep a clear vision of what the user is about to do, a short introduction summarising the purpose of the General Boat license test and that this is just the practice test and not the actual written test that needs to be passed at the proper authority office. The user needs to enter their name to start the quiz. The user is then directed toward the quiz questions page. 
+
+![username field](assets/images/screenshot-username.png)
+
+The username field has restrictions that will not allow the use of spaces or special quaracters, only letters A to Z small or capital are allowed to avoid crashing the site. Furthermore, the username has to be more than 2 letters. If the user enters a one letter username or with special quaracters, an invalide data input message will be display letting the user know of the rules.
 
 ## Quiz page:
 
@@ -59,7 +67,9 @@ The user will pass a test of ten questions and each question features four answe
 
 ## Score:
 
-Above the Q and A area, a score out of 10 is displayed. Every time the user answers correctly the score increments by 1 point. The score is saved and displayed throughout the test and at the end of the quiz when the user submits, they will see the final score accompanied by an encouraging message to keep practicing as done at sailing school and by the sea rule don't congratulate a sea mate but encourage to keep practicing and learning because the sea is unforgiving and one has to ways stay sharp.
+![the score ](assets/images/screenshot-score.png)
+
+Above the Q and A area, a score out of 10 is displayed. Every time the user answers correctly the score increments by 1 point. The score is saved and displayed throughout the test and at the end of the quiz when the user submits, they will see the final score accompanied by a message to keep practicing as done at sailing school and by the sea rule don't congratulate a sea mate but encourage to keep practicing and learning because the sea is unforgiving and one has to stay sharp. The candidate needs a minimum score of 70% to pass the test. A different message will show depending on the score.s
 
 ## Control buttons
 
@@ -73,15 +83,15 @@ Allows the user to stop the quiz and go back to the home page and restart from t
 Allows the user to skip to the next answer after answering or choosing not to.
 ### Previous
 
-This button appears once the second question appears, answered or not. It allows the user to go back to previous questions and check the answers if needed.
+This button appears once the second question is displayed. It allows the user to go back to previous questions and check the answers they entered, for instance.
 ### Submit
 
-Allows the user to end the quiz, submit the answered question and check the final score. 
+Allows the user to end the quiz, submit the answered questions and check the final score. 
  ### Finale Message
 
- ![Submit quiz message](assets/images/quiz-end.png)
+ ![Submit quiz message](assets/images/quiz-end-message.png)
 
- On clicking a message appears encouraging further practice as done in sailing school “never congratulate, always push more practice!”.
+ Once the user has submited their quiz answers, depending on the score, a message matching the score appears encouraging further practice as done in sailing school “never congratulate, always push more practice!”.
 
 # Technologies 
 
@@ -105,10 +115,10 @@ Allows the user to end the quiz, submit the answered question and check the fina
 ## Other Tools
   1. **Figma**
      * To create wireframes
-  2. **Favicon Generator**
+  2. **Favicon.io**
      * to create a favicon
   4. **freepik** 
-     * To download free images
+     * To download free images such as the background image
   5. **Resizepixe**
      * To resize images
 
@@ -116,10 +126,10 @@ Allows the user to end the quiz, submit the answered question and check the fina
 ## Validation
   * HTML has been validated with W3C HTML5 Validator and the errors found were all corrected.
   * CSS has been validated with W3C CSS Validator and the errors found were all corrected.
-  * Javascript has been tested and validated using Jshint and the errors found were all corrected.
+  * Javascript has been tested and validated using Jshint and the warnings reported were all corrected.
   
 ## Testing
-  * The site has been through a rigorous testing process of sailing quiz enthusiasts among friends and family members, including my mentor and myself.
+  * The site has been through a rigorous testing process of sailing quiz enthusiasts among friends and family members, including my mentor and myself
   * Each feature was first tested on the developer tools before being added to the VScode
   * The user cannot start the quiz without filling in the username field
   * Various bugs have been reported and solved (see bugs section for further details) 
