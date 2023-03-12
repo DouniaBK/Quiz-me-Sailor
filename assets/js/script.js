@@ -165,7 +165,6 @@ if (previousBtn !== null ){
  */
 
 function displayQandA() {
-    console.log('displayQandA', currentQuestion, score);
 
     // Reset user message
     messageElement.innerHTML = "";
@@ -400,5 +399,6 @@ const validateUsername = (username) => {
     const rule = /^[a-zA-Z\-]+$/;
 
     // Evaluate and return 
+
     return rule.test(username);
 };
