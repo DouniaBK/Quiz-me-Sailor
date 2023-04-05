@@ -5,19 +5,6 @@ Quiz me, Sailor! is a short practice test that helps sailors get prepared for th
 Practice tests for sailing can be a daunting experience that stresses the life-or-death situations on rough seas if one does not know what to do. Therefore, I chose a rather simple yet playful aesthetic that takes the seriousness out of such tests and invites the user into a clean and positive learning environment with a hint of sailing culture that encourages the user to think, keep practicing, and learn from mistakes. 
 
 
-# Table of Contents
-1. User Experience
-    * Goals
-    * Design
-2. Features
-3. Technologies
-4. Methods
-    * Validation
-    * Testing
-5. Bugs
-6. Deployment
-7. Credit and Contacts
-
 
 
 # User Experience
